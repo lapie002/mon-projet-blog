@@ -1,6 +1,6 @@
 <li [ngClass]="{'list-group-item':true, 'list-group-item-success': postLoveIts > 0, 'list-group-item-danger': postLoveIts < 0}">
   <div [ngClass]="{'text-right':true}" [ngStyle]="{color:getDateColor()}">{{ postCreated_at | date: 'short' | uppercase }}</div>
-  <h4 [ngStyle]="{color:getColor()}">{{ postTitle }}</h4>
+  <h3  [ngClass]="{'font-weight-bold':true}" [ngStyle]="{color:getColor()}">{{ postTitle }}</h3>
   <p [ngStyle]="{color:getColor()}">{{ postContent }}</p>
   <button [ngClass]="{'btn':true, 'btn-success':true}"  (click)="onIncremente()">Love it!</button>
   <button [ngClass]="{'btn':true, 'btn-danger':true}"   (click)="onDecremente()">Don't love it!</button>

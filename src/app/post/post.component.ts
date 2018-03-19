@@ -31,7 +31,7 @@ export class PostComponent implements OnInit {
   }
 
   getDateColor(){
-    return 'black';
+    return 'grey';
   }
 
    onIncremente()
