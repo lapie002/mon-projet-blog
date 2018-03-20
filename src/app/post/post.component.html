@@ -1,7 +1,22 @@
-<li [ngClass]="{'list-group-item':true, 'list-group-item-success': postLoveIts > 0, 'list-group-item-danger': postLoveIts < 0}">
-  <div [ngClass]="{'text-right':true}" [ngStyle]="{color:getDateColor()}">{{ postCreated_at | date: 'short' | uppercase }}</div>
-  <h3  [ngClass]="{'font-weight-bold':true}" [ngStyle]="{color:getColor()}">{{ postTitle }}</h3>
-  <p [ngStyle]="{color:getColor()}">{{ postContent }}</p>
-  <button [ngClass]="{'btn':true, 'btn-success':true}"  (click)="onIncremente()">Love it!</button>
-  <button [ngClass]="{'btn':true, 'btn-danger':true}"   (click)="onDecremente()">Don't love it!</button>
+<li [ngClass]="{'list-group-item':true,
+                'list-group-item-success': postLoveIts > 0,
+                'list-group-item-danger': postLoveIts < 0}">
+  <div [ngClass]="{'row':true}">
+    <div [ngClass]="{'col-md-6':true,
+                     'col-xs-12':true}">
+      <h3 [ngClass]="{'font-weight-bold':true}" [ngStyle]="{'color':getColor(), 'margin': 0 + 'px'}">{{ postTitle }}</h3>
+    </div>
+    <div [ngClass]="{'col-md-6':true,
+                     'col-xs-12':true,
+                     'text-right':true}"
+         [ngStyle]="{'color':getDateColor()}">{{ postCreated_at | date: 'short' | uppercase }}
+    </div>
+    <div [ngClass]="{'col-xs-12':true}">
+      <p>{{ postContent }}</p>
+    </div>
+    <div [ngClass]="{'col-xs-12':true}">
+      <button [ngClass]="{'btn':true, 'btn-success':true}"  (click)="onIncremente()">Love it!</button>
+      <button [ngClass]="{'btn':true, 'btn-danger':true}"   (click)="onDecremente()">Don't love it!</button>
+    </div>
+  </div>
 </li>
